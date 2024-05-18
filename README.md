@@ -7,9 +7,9 @@ Based on the [Wikipedia DPLL algorithm page](https://en.wikipedia.org/wiki/DPLL_
 ### Requirements
 
 The requirements are as follows:
-- the program should be based on the DPLL algorithm with unit propagation (further improvements are optional, but reasonable effectiveness is expected)
-- the program is run by executing "solver input.cnf"
-- the program will print lines to standard output containing this information:
+1. the program should be based on the DPLL algorithm with unit propagation (further improvements are optional, but reasonable effectiveness is expected)
+2. the program is run by executing "solver input.cnf"
+3. the program will print lines to standard output containing this information:
     1. problem is SAT/UNSAT
     2. a list of literals that evaluated to "true"
     3. procesor time needed for reading and initialization
