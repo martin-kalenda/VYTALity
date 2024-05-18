@@ -2,9 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-
-
-
+#include <vector>
 
 using namespace std;
 
@@ -24,9 +22,16 @@ int main(int argc, char* argv[])
 	int a;
 	int b;
 
-	skip_comments(input);
-	read_params(input, a, b);
-	cout << "read: " << a << b << endl;
+	vector<vector<int>> cnf;
+
+	cnf_read_all(input, cnf, a, b);
+
+	for (int i = 0; i < cnf.size(); i++) {
+		for (int j = 0; j < cnf[i].size(); j++) {
+			cout << cnf[i][j] << " ";
+		}
+		cout << endl;
+	}
 
 	return 0;
 }
