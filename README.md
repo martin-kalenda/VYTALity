@@ -1,10 +1,12 @@
 # VYTALity
-[![Česky](https://img.shields.io/badge/%C4%8Cesky-green?style=flat)](README.cs.md)
+[![Čeština](https://img.shields.io/badge/%C4%8Cesky-green?style=flat)](README.cs.md)
 
 A DPLL SAT solver with unit propadation. Created as the final assignment for the VYTAL subject I took at Palacký University Olomouc.
 
 ## Introduction
 Based on the [Wikipedia DPLL algorithm page](https://en.wikipedia.org/wiki/DPLL_algorithm) and this [DPLL algorithm breakdown](https://www.cs.ox.ac.uk/people/james.worrell/lecture06.pdf) by Oxford Department of Computer Science. At this time the only goal of this program is to fulfill all the requirements for completing the subject, I might improve upon these later.
+
+I took on this project as an opportunity to learn C++, and this is my first time writing code in it. I chose C++ for the creature comforts it offers over C (with which I am somewhat familiar) and also for its speed, to compensate for my sloppy coding.
 
 ### Requirements
 

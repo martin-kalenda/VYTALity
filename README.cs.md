@@ -6,6 +6,8 @@ DPLL SAT solver s unit propagací. Vytvořen jako zápočtový úkol do předmě
 ## Úvod
 Založen na [Wikipedia stránce DPLL algoritmu](https://en.wikipedia.org/wiki/DPLL_algorithm) a tomto [shrnutí DPLL algoritmu](https://www.cs.ox.ac.uk/people/james.worrell/lecture06.pdf) od Oxford Department of Computer Science. V tento moment je jediným cílem programu splnit veškeré požadavky pro zápočet, časem může být funkcionalita rozšířena.
 
+Tento projekt jsem vzal jako příležitost naučit se C++, a je to poprvé, kdy píšu kód v tomto jazyce. Vybral jsem si C++ kvůli vymoženostem, které nabízí ve srovnání s jazykem C (se kterým jsem trochu obeznámen) a také kvůli jeho rychlosti, abych kompenzoval své programovací schopnosti.
+
 ### Požadavky
 
 Požadavky jsou následující:
