@@ -1,15 +1,13 @@
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
-# include <cstring>
-# include <fstream>
-# include <cmath>
-# include <ctime>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <stdexcept>
+#include <vector>
 
 using namespace std;
 
-# include "dimacs.hpp"
-
+#include "dimacs.hpp"
 
 // skip leading comments from the stream
 void skip_comments(ifstream &input) {
@@ -30,15 +28,19 @@ void skip_comments(ifstream &input) {
 }
 
 // read the header of given DIMACS filestream
-bool read_params(ifstream &input, int &nbvar, int &nbclauses) {
+bool cnf_read_params(ifstream &input, int &nbvar, int &nbclauses) {
 	string line = "";
 	string format = "";
 
 	// read what should be the parameter line
 	try {
-		getline(input, line);
+		// check that input stream is not NULL
+		if (!input) {
+			throw runtime_error(
+				"Provided stream is NULL.");
+		}
 
-		cout << line << endl;
+		getline(input, line);
 
 		// line doesn't start with 'p' or is empty
 		if (line.empty() || line[0] != 'p') {
@@ -64,7 +66,7 @@ bool read_params(ifstream &input, int &nbvar, int &nbclauses) {
   	// read was successful
 		return true;
 	}
-
+	// catch exceptions
 	catch (const exception& e) {
 		cerr << "An exception occured while reading header:\n" << e.what() << endl;
 		return false;
@@ -73,6 +75,33 @@ bool read_params(ifstream &input, int &nbvar, int &nbclauses) {
 
 
 // read the body of given DIMACS filestream
-bool read_body(const ifstream &input, int &nbvar, int &nbclauses, bool consume = true);
+// TODO: exception handling
+bool cnf_read_body(ifstream &input, vector<vector<int>> &cnf, int nbvar, int nbclauses) {
+	int literal = 0;
+	string line = "";
+	istringstream iss;
 
-bool read(const ifstream &input, int &nbvar, int &nbclauses );
+	// TODO: test performance of creating a new instance for each line vs iss.clear; iss.str();
+	while (getline(input, line)) {
+		vector<int> clause;
+		iss.clear();
+		iss.str(line);
+
+		while (iss >> literal) {
+			if (literal == 0) {
+				break;
+			}
+			clause.push_back(literal);
+		}
+		cnf.push_back(clause);
+	}
+	return true;
+}
+
+bool cnf_read_all(ifstream &input, vector<vector<int>> &cnf, int &nbvar, int &nbclauses) {
+	skip_comments(input);
+	cnf_read_params(input, nbvar, nbclauses);
+	cnf_read_body(input, cnf, nbvar, nbclauses);
+
+	return true;
+}
