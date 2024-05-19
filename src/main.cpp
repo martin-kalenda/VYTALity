@@ -1,11 +1,10 @@
-#include <cstdlib>
 #include <iostream>
-#include <iomanip>
 #include <fstream>
 #include <vector>
-#include <algorithm>
-#include <set>
 #include <unordered_set>
+#include <set>
+#include <unordered_map>
+
 using namespace std;
 
 #include "lib/dimacs.hpp"
@@ -24,27 +23,11 @@ int main(int argc, char* argv[])
 	int a;
 	int b;
 
-	vector<vector<int>> cnf;
+	vector<set<int>> cnf;
+	vector<int> thruths;
 
 	cnf_read_all(input, cnf, a, b);
-
-	for (int i = 0; i < cnf.size(); i++) {
-		for (int j = 0; j < cnf[i].size(); j++) {
-			cout << cnf[i][j] << " ";
-		}
-		cout << endl;
-	}
-
-	vector<int> asg;
-
-
-	vector<vector<int>> test = { { 2, 5 }, { 3 }, { -3 } };
-
-	if (solve(test, asg)) {
-		cout << "error" << endl;
-	} else {
-		cout << "UNSAT" << endl;
-	}
+	solve(cnf, thruths);
 
 	return 0;
 }
