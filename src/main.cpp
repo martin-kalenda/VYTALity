@@ -3,11 +3,13 @@
 #include <iomanip>
 #include <fstream>
 #include <vector>
-
+#include <algorithm>
+#include <set>
+#include <unordered_set>
 using namespace std;
 
 #include "lib/dimacs.hpp"
-//#include "lib/solver.hpp"
+#include "lib/solver.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -31,6 +33,17 @@ int main(int argc, char* argv[])
 			cout << cnf[i][j] << " ";
 		}
 		cout << endl;
+	}
+
+	vector<int> asg;
+
+
+	vector<vector<int>> test = { { 2, 5 }, { 3 }, { -3 } };
+
+	if (solve(test, asg)) {
+		cout << "error" << endl;
+	} else {
+		cout << "UNSAT" << endl;
 	}
 
 	return 0;
