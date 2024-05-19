@@ -1,0 +1,14 @@
+# ignore all
+*
+
+# except for
+!LICENSE
+!README.md
+!src/
+!src/Makefile
+!src/main.cpp
+!src/lib/
+!src/lib/dimacs.hpp
+!src/lib/dimacs.cpp
+!src/lib/solver.hpp
+!src/lib/solver.cpp
