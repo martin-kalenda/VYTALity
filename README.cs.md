@@ -1,5 +1,5 @@
 # VYTALity
-![English](https://img.shields.io/badge/English-green?style=flat)
+[![English](https://img.shields.io/badge/English-green?style=flat)](README.md)
 
 DPLL SAT solver s unit propagací. Vytvořen jako zápočtový úkol do předmětu VYTAL, který jsem studoval na Univerzitě Palackého v Olomouci.
 

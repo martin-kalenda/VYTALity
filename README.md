@@ -1,5 +1,5 @@
 # VYTALity
-![Česky](https://img.shields.io/badge/%C4%8Cesky-green?style=flat)
+[![Česky](https://img.shields.io/badge/%C4%8Cesky-green?style=flat)](README.cs.md)
 
 A DPLL SAT solver with unit propadation. Created as the final assignment for the VYTAL subject I took at Palacký University Olomouc.
 
